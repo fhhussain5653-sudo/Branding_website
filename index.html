@@ -44,12 +44,12 @@
     <section class="py-24 px-6 max-w-4xl mx-auto" data-aos="fade-up">
         <div class="bg-zinc-900/50 p-10 rounded-2xl border border-white/10 glass">
             <h3 class="text-3xl font-black text-center mb-10 uppercase tracking-tighter text-yellow-500">Get A Quote</h3>
-            <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" placeholder="Name" class="bg-black/50 border border-white/10 p-4 rounded-lg focus:border-yellow-500 outline-none">
-                <input type="text" placeholder="Phone Number" class="bg-black/50 border border-white/10 p-4 rounded-lg focus:border-yellow-500 outline-none">
-                <textarea placeholder="Message" rows="4" class="md:col-span-2 bg-black/50 border border-white/10 p-4 rounded-lg focus:border-yellow-500 outline-none"></textarea>
-                <button class="md:col-span-2 bg-yellow-500 text-black font-black py-4 rounded-lg uppercase tracking-widest hover:bg-white transition-all">Submit Now</button>
-            </form>
+          <form action="https://formspree.io/f/xqeddpgl" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <input type="text" name="Name" placeholder="Name" class="bg-black/50 border border-white/10 p-3 rounded" required>
+    <input type="text" name="Phone Number" placeholder="Phone Number" class="bg-black/50 border border-white/10 p-3 rounded" required>
+    <textarea name="Message" placeholder="Message" rows="4" class="md:col-span-2 bg-black/50 border border-white/10 p-3 rounded" required></textarea>
+    <button type="submit" class="md:col-span-2 bg-yellow-500 text-black font-black py-4 rounded-xl hover:bg-yellow-400 transition-all">Send Message</button>
+</form>
         </div>
     </section>
 
