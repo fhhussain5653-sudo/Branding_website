@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saadat Event Solution | Premier Exhibition Stalls</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+        .logo-font { font-family: 'Syncopate', sans-serif; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+        .animate-marquee { display: flex; width: max-content; animation: marquee 25s linear infinite; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); }
+    </style>
+</head>
+<body>
+
+    <a href="https://wa.me/923000000000" class="fixed bottom-6 right-6 bg-[#25D366] text-white p-4 rounded-full shadow-2xl z-[100] hover:scale-110 transition-transform">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <nav class="fixed w-full z-50 border-b border-white/10 glass px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-3">
+            <div class="relative h-12 w-12 bg-yellow-500 rounded-full flex items-center justify-center text-black font-black logo-font border-2 border-yellow-400">S</div>
+            <h1 class="logo-font text-lg text-yellow-500 uppercase leading-none">
+                SAADAT <br><span class="text-white text-[10px] tracking-[0.3em]">EVENT SOLUTION</span>
+            </h1>
+        </div>
+    </nav>
+
+    <header class="relative h-screen flex items-center justify-center overflow-hidden text-center px-6">
+        <img src="https://images.unsplash.com/photo-1582192730841-2a682d7375f9?auto=format&fit=crop&q=80&w=1600" class="absolute inset-0 w-full h-full object-cover opacity-40">
+        <div class="relative z-10" data-aos="zoom-out" data-aos-duration="1500">
+            <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter">WE BUILD <span class="text-yellow-500">EXCELLENCE</span></h2>
+            <p class="mt-6 text-gray-400 max-w-xl mx-auto">Premium exhibition stall design and fabrication.</p>
+        </div>
+    </header>
+
+    <div class="bg-yellow-500 py-4 overflow-hidden"><div class="animate-marquee"><span class="text-black font-black uppercase text-xl mx-8 italic">Exhibition Stalls • Fabrication • 3D Design • Event Management • Exhibition Stalls • Fabrication • 3D Design • Event Management •</span></div></div>
+
+    <section class="py-24 px-6 max-w-4xl mx-auto" data-aos="fade-up">
+        <div class="bg-zinc-900/50 p-10 rounded-2xl border border-white/10 glass">
+            <h3 class="text-3xl font-black text-center mb-10 uppercase tracking-tighter text-yellow-500">Get A Quote</h3>
+            <form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" placeholder="Name" class="bg-black/50 border border-white/10 p-4 rounded-lg focus:border-yellow-500 outline-none">
+                <input type="text" placeholder="Phone Number" class="bg-black/50 border border-white/10 p-4 rounded-lg focus:border-yellow-500 outline-none">
+                <textarea placeholder="Message" rows="4" class="md:col-span-2 bg-black/50 border border-white/10 p-4 rounded-lg focus:border-yellow-500 outline-none"></textarea>
+                <button class="md:col-span-2 bg-yellow-500 text-black font-black py-4 rounded-lg uppercase tracking-widest hover:bg-white transition-all">Submit Now</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/10 text-center opacity-50">
+        <p class="logo-font text-yellow-500 text-sm">SAADAT EVENT SOLUTION</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init({ once: true });</script>
+</body>
+</html>
