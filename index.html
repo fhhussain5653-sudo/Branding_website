@@ -3,115 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAADAT EVENT SOLUTION | Premium Excellence</title>
+    <title>SES | SAADAT EVENT SOLUTION</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&family=Playfair+Display:ital,wght@1,900&display=swap');
-        body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+        
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; overflow-x: hidden; }
+
+        /* Moving Animated Background */
+        .moving-bg {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(-45deg, #050505, #1a1a1a, #0d0d0d, #201b01);
+            background-size: 400% 400%;
+            z-index: -2;
+            animation: gradientMove 12s ease infinite;
+        }
+        @keyframes gradientMove { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
         .logo-font { font-family: 'Syncopate', sans-serif; }
         .brand-accent { font-family: 'Playfair Display', serif; font-style: italic; }
         
-        /* Video Background Styling */
-        #bg-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; transform: translate(-50%, -50%); filter: brightness(0.3) contrast(1.1); }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        /* Premium Glass Transparency */
+        .glass { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255,255,255,0.1); }
         
-        /* Gallery Zoom */
-        .gallery-card { overflow: hidden; border-radius: 1rem; position: relative; }
-        .gallery-card img { transition: 0.6s ease; width: 100%; height: 350px; object-fit: cover; }
-        .gallery-card:hover img { transform: scale(1.1); filter: brightness(0.6); }
+        .video-box { width: 100%; max-width: 1100px; margin: 0 auto; border-radius: 30px; overflow: hidden; border: 2px solid rgba(234,179,8,0.3); box-shadow: 0 0 50px rgba(234,179,8,0.15); }
+        
+        .social-icon-top { height: 42px; width: 42px; display: flex; align-items: center; justify-content: center; border-radius: 50%; transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); shadow-lg; }
+        .social-icon-top:hover { transform: scale(1.2) rotate(10deg); }
 
-        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .animate-marquee { display: flex; width: max-content; animation: marquee 20s linear infinite; }
+        .hero-text { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; }
     </style>
 </head>
 <body>
 
+    <div class="moving-bg"></div>
+
     <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-4">
-            <div class="bg-yellow-500 h-10 w-10 rounded-lg flex items-center justify-center font-black text-black shadow-lg">S</div>
-            <div>
-                <h1 class="logo-font text-xl text-yellow-500 leading-none tracking-tighter">SAADAT</h1>
-                <span class="brand-accent text-[10px] text-white/70 uppercase tracking-widest">Event Solutions</span>
+        <div class="flex items-center gap-3">
+            <div class="bg-gradient-to-br from-yellow-400 to-yellow-600 p-2 rounded-xl shadow-lg">
+                <span class="logo-font text-2xl text-black font-black">SES</span>
+            </div>
+            <div class="hidden sm:block">
+                <p class="logo-font text-xs text-yellow-500 tracking-tighter">SAADAT</p>
+                <p class="brand-accent text-[9px] text-white/60 uppercase tracking-[0.2em]">Event Solution</p>
             </div>
         </div>
-        <div class="hidden md:flex items-center gap-6">
-            <a href="https://www.facebook.com/aapka_page" class="text-white/70 hover:text-yellow-500 transition-all"><i class="fab fa-facebook-f text-lg"></i></a>
-            <a href="https://www.instagram.com/aapka_username" class="text-white/70 hover:text-yellow-500 transition-all"><i class="fab fa-instagram text-lg"></i></a>
-            <a href="https://wa.me/923152445653" class="bg-yellow-500 text-black px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest hover:bg-yellow-400 transition-all">Connect</a>
+
+        <div class="flex items-center gap-3 md:gap-4">
+            <a href="https://web.facebook.com/scheyraz.hussain" target="_blank" class="social-icon-top bg-[#1877F2]"><i class="fab fa-facebook-f text-lg text-white"></i></a>
+            <a href="https://www.instagram.com/scheyrazhussain/" target="_blank" class="social-icon-top bg-[#E4405F]"><i class="fab fa-instagram text-lg text-white"></i></a>
+            <a href="https://www.tiktok.com/@scheyras" target="_blank" class="social-icon-top bg-black border border-white/20"><i class="fab fa-tiktok text-lg text-white"></i></a>
+            <a href="https://wa.me/923102187741" target="_blank" class="bg-[#25D366] px-4 py-2 rounded-full flex items-center gap-2 font-black text-[10px] uppercase shadow-xl hover:bg-[#128C7E] transition-all">
+                <i class="fab fa-whatsapp text-xl"></i>
+                <span class="hidden lg:block">Connect</span>
+            </a>
         </div>
     </nav>
 
-    <header class="relative h-screen flex items-center justify-center overflow-hidden">
-        <video autoplay muted loop playsinline id="bg-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-large-exhibition-hall-with-many-people-32742-large.mp4" type="video/mp4">
-        </video>
-        <div class="relative z-10 text-center" data-aos="zoom-in" data-aos-duration="1200">
-            <h2 class="text-6xl md:text-9xl font-black italic uppercase tracking-tighter">
-                IMPACTFUL <span class="text-yellow-500">DESIGNS</span>
+    <main class="pt-32 pb-20 px-6">
+        
+        <section class="mb-20" data-aos="fade-down" data-aos-duration="1000">
+            <div class="video-box glass">
+                <video autoplay muted loop playsinline class="w-full">
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-large-exhibition-hall-with-many-people-32742-large.mp4" type="video/mp4">
+                </video>
+            </div>
+        </section>
+
+        <section class="text-center mb-32" data-aos="zoom-in">
+            <h2 class="hero-text font-black uppercase tracking-tighter">
+                WE BUILD <br><span class="text-yellow-500">EXCELLENCE</span>
             </h2>
-            <p class="mt-4 text-gray-400 brand-accent text-xl">Creating Premium Brand Experiences</p>
-        </div>
-    </header>
+            <div class="h-1 w-24 bg-yellow-500 mx-auto mt-8 rounded-full"></div>
+            <p class="mt-8 text-gray-400 brand-accent text-xl md:text-2xl max-w-3xl mx-auto opacity-80">Premium Brand Experiences & Exhibition Solutions</p>
+        </section>
 
-    <div class="bg-yellow-500 py-4 overflow-hidden">
-        <div class="animate-marquee">
-            <span class="text-black font-black uppercase mx-8">Exhibition Stalls • Event Management • Fabrication • 3D Design • Branding • </span>
-            <span class="text-black font-black uppercase mx-8">Exhibition Stalls • Event Management • Fabrication • 3D Design • Branding • </span>
-        </div>
-    </div>
-
-    <section class="py-24 px-6 max-w-7xl mx-auto">
-        <h3 class="logo-font text-3xl text-yellow-500 mb-12 text-center uppercase tracking-widest">Our Masterpieces</h3>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="gallery-card" data-aos="fade-up">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/40 font-black">STALL DESIGN</div>
-            </div>
-            <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/40 font-black">FABRICATION</div>
-            </div>
-            <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80">
-                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/40 font-black">BRANDING</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-24 px-6 bg-zinc-950">
-        <div class="max-w-4xl mx-auto bg-zinc-900 p-10 rounded-3xl border border-white/5">
-            <h3 class="text-3xl font-black text-center mb-10 text-yellow-500 uppercase tracking-tighter">Share Your Vision</h3>
-            <form action="https://formspree.io/f/xqeddpgl" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" name="Name" placeholder="Your Name" class="bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-yellow-500" required>
-                <input type="text" name="Phone" placeholder="Phone Number" class="bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-yellow-500" required>
-                
-                <div class="md:col-span-2 border-2 border-dashed border-white/10 p-8 rounded-xl text-center hover:border-yellow-500 transition-all relative">
-                    <input type="file" name="Reference_Image" class="absolute inset-0 opacity-0 cursor-pointer">
-                    <i class="fas fa-cloud-upload-alt text-2xl text-yellow-500 mb-2"></i>
-                    <p class="text-sm text-gray-400">Upload Reference Image / Design</p>
+        <section class="max-w-7xl mx-auto mb-32">
+            <h3 class="logo-font text-yellow-500 text-center mb-12 text-2xl">OUR MASTERPIECES</h3>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass p-3 rounded-[2rem] group" data-aos="fade-up">
+                    <div class="overflow-hidden rounded-[1.5rem] h-80">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700">
+                    </div>
                 </div>
+                <div class="glass p-3 rounded-[2rem] group" data-aos="fade-up" data-aos-delay="100">
+                    <div class="overflow-hidden rounded-[1.5rem] h-80">
+                        <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700">
+                    </div>
+                </div>
+                <div class="glass p-3 rounded-[2rem] group" data-aos="fade-up" data-aos-delay="200">
+                    <div class="overflow-hidden rounded-[1.5rem] h-80">
+                        <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80" class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-                <textarea name="Message" placeholder="How can we help you?" rows="4" class="md:col-span-2 bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-yellow-500" required></textarea>
-                <button type="submit" class="md:col-span-2 bg-yellow-500 text-black font-black py-4 rounded-xl hover:bg-yellow-400 transition-all uppercase tracking-widest">Launch Project</button>
-            </form>
-        </div>
-    </section>
+        <section class="max-w-4xl mx-auto">
+            <div class="glass p-8 md:p-14 rounded-[3rem] shadow-2xl relative overflow-hidden">
+                <div class="absolute top-0 right-0 p-10 bg-yellow-500/5 rounded-full -mr-10 -mt-10"></div>
+                <h3 class="text-4xl font-black text-center mb-12 text-yellow-500 uppercase tracking-tighter">Get A Quote</h3>
+                
+                <form action="https://formspree.io/f/xqeddpgl" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+                    <input type="text" name="Name" placeholder="Full Name" class="bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-yellow-500 transition-all text-white" required>
+                    <input type="text" name="Phone" placeholder="WhatsApp Number" class="bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-yellow-500 transition-all text-white" required>
+                    
+                    <div class="md:col-span-2 border-2 border-dashed border-white/10 p-10 rounded-2xl text-center hover:border-yellow-500 transition-all group relative">
+                        <input type="file" name="Reference_Design" class="absolute inset-0 opacity-0 cursor-pointer">
+                        <i class="fas fa-cloud-upload-alt text-3xl text-yellow-500 mb-3 group-hover:bounce"></i>
+                        <p class="text-gray-400 font-medium">Upload Reference Image or Design</p>
+                    </div>
 
-    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        <a href="https://www.facebook.com/aapka_page" target="_blank" class="bg-[#1877F2] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
-            <i class="fab fa-facebook-f text-xl"></i>
-        </a>
-        <a href="https://www.instagram.com/aapka_username" target="_blank" class="bg-[#E4405F] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
-            <i class="fab fa-instagram text-xl"></i>
-        </a>
-        <a href="https://wa.me/923152445653" target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
-            <i class="fab fa-whatsapp text-3xl"></i>
-        </a>
-    </div>
+                    <textarea name="Message" placeholder="How can we help you?" rows="4" class="md:col-span-2 bg-white/5 border border-white/10 p-5 rounded-2xl outline-none focus:border-yellow-500 transition-all text-white" required></textarea>
+                    
+                    <button type="submit" class="md:col-span-2 bg-yellow-500 text-black font-black py-6 rounded-2xl hover:bg-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.4)] transition-all uppercase tracking-[0.4em] text-sm">Launch Project</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-12 text-center border-t border-white/5">
+        <p class="logo-font text-[10px] text-yellow-500 tracking-[0.5em] opacity-40 uppercase">SES • SAADAT EVENT SOLUTION • 2026</p>
+    </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>AOS.init({ once: true });</script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+    </script>
 </body>
 </html>
