@@ -9,117 +9,124 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap');
         
-        body { font-family: 'Inter', sans-serif; background: #000; color: white; overflow-x: hidden; margin: 0; }
+        body { font-family: 'Inter', sans-serif; background: #000; color: white; margin: 0; overflow-x: hidden; }
 
-        /* Research-Based Moving Background (Mobile Friendly) */
-        .bg-glow {
+        /* Smooth Moving Background */
+        .bg-layer {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at 20% 30%, #1a1a00 0%, #000 70%);
+            background: radial-gradient(circle at 50% 50%, #111 0%, #000 100%);
             z-index: -2;
         }
-        .orb {
-            position: absolute; width: 250px; height: 250px;
-            background: rgba(234, 179, 8, 0.1); filter: blur(80px);
+        .moving-light {
+            position: absolute; width: 350px; height: 350px;
+            background: rgba(234, 179, 8, 0.08); filter: blur(100px);
             border-radius: 50%; z-index: -1;
-            animation: float 10s infinite alternate ease-in-out;
+            animation: moveLight 12s infinite alternate ease-in-out;
         }
-        @keyframes float { from { transform: translate(0, 0); } to { transform: translate(40vw, 30vh); } }
+        @keyframes moveLight { from { top: 10%; left: 10%; } to { top: 60%; left: 60%; } }
 
-        /* Force Transparency for Mobile */
-        .glass { 
-            background: rgba(255, 255, 255, 0.04) !important; 
-            backdrop-filter: blur(15px) !important; 
-            -webkit-backdrop-filter: blur(15px) !important;
-            border: 1px solid rgba(255, 255, 255, 0.08) !important;
-        }
-        
-        .logo-font { font-family: 'Syncopate', sans-serif; }
-        
-        /* Social Icons Consistency */
-        .social-btn {
-            width: 38px; height: 38px; display: flex; align-items: center; justify-content: center;
-            border-radius: 50%; color: white; transition: 0.3s;
+        .glass-nav { 
+            background: rgba(10, 10, 10, 0.8) !important; 
+            backdrop-filter: blur(20px) !important; 
+            -webkit-backdrop-filter: blur(20px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .video-container { 
-            width: 100%; max-width: 900px; margin: 0 auto; border-radius: 15px; 
-            overflow: hidden; border: 1px solid rgba(234, 179, 8, 0.2);
-            background: #050505; position: relative;
+        .social-circle {
+            width: 35px; height: 35px; display: flex; align-items: center; justify-content: center;
+            border-radius: 50%; color: white; font-size: 0.9rem;
         }
+
+        /* Fixed Video Container */
+        .video-box { 
+            width: 100%; max-width: 950px; margin: 0 auto; border-radius: 15px; 
+            overflow: hidden; border: 1px solid rgba(234, 179, 8, 0.3);
+            background: #000; box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+        }
+        video { width: 100%; height: auto; display: block; object-fit: cover; }
     </style>
 </head>
 <body>
 
-    <div class="bg-glow"><div class="orb"></div></div>
+    <div class="bg-layer"><div class="moving-light"></div></div>
 
-    <nav class="fixed w-full z-50 glass px-3 py-3 flex justify-between items-center">
+    <nav class="fixed w-full z-50 glass-nav px-4 py-3 flex justify-between items-center">
         <div class="flex items-center gap-2">
             <div class="bg-yellow-500 px-2 py-1 rounded">
-                <span class="logo-font text-base text-black font-black">SES</span>
+                <span style="font-family:'Syncopate'" class="text-sm text-black font-black">SES</span>
             </div>
             <div class="flex flex-col">
-                <span class="text-[10px] font-black tracking-tight text-yellow-500 leading-none">SAADAT</span>
-                <span class="text-[7px] font-bold text-white/60 uppercase leading-none">Event Solution</span>
+                <span class="text-[9px] font-black text-yellow-500 leading-none">SAADAT</span>
+                <span class="text-[7px] font-bold text-white/50 uppercase">Event Solution</span>
             </div>
         </div>
-
         <div class="flex items-center gap-2">
-            <a href="https://web.facebook.com/scheyraz.hussain" target="_blank" class="social-btn bg-[#1877F2]"><i class="fab fa-facebook-f text-sm"></i></a>
-            <a href="https://www.instagram.com/scheyrazhussain/" target="_blank" class="social-btn bg-[#E4405F]"><i class="fab fa-instagram text-sm"></i></a>
-            <a href="https://www.tiktok.com/@scheyras" target="_blank" class="social-btn bg-black border border-white/20"><i class="fab fa-tiktok text-sm"></i></a>
-            <a href="https://wa.me/923102187741" target="_blank" class="social-btn bg-[#25D366]"><i class="fab fa-whatsapp text-lg"></i></a>
+            <a href="https://web.facebook.com/scheyraz.hussain" class="social-circle bg-[#1877F2]"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/scheyrazhussain/" class="social-circle bg-[#E4405F]"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.tiktok.com/@scheyras" class="social-circle bg-black border border-white/20"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/923102187741" class="social-circle bg-[#25D366]"><i class="fab fa-whatsapp text-lg"></i></a>
         </div>
     </nav>
 
     <main class="pt-24 pb-10 px-4">
         
         <section class="mb-10">
-            <div class="video-container">
-                <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=800" class="w-full h-full object-cover">
-                    <source src="https://player.vimeo.com/external/370331493.sd.mp4?s=34d707011f07455d3f28246d6550772f91bb703c&profile_id=164&oauth2_token_id=57447761" type="video/mp4">
+            <div class="video-box">
+                <video id="mainVideo" autoplay muted loop playsinline preload="auto">
+                    <source src="https://cdn.pixabay.com/vimeo/326162391/event-22533.mp4?width=1280&hash=f5c5b1c5a9b7a4a5e3a5a5a5a5a5a5a5" type="video/mp4">
+                    <source src="https://v1.padel.com/wp-content/uploads/2023/10/Exhibition.mp4" type="video/mp4">
                 </video>
             </div>
         </section>
 
         <section class="text-center mb-16">
-            <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter mb-2">
+            <h1 class="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-tight">
                 WE BUILD <br><span class="text-yellow-500">EXCELLENCE</span>
             </h1>
-            <p class="text-white/40 text-xs md:text-lg italic">Premium Exhibition & Event Solutions</p>
+            <p class="text-white/40 text-xs mt-2 italic tracking-widest">PREMIUM EXHIBITION SOLUTIONS</p>
         </section>
 
-        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
-            <div class="glass p-2 rounded-xl">
-                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=500" class="rounded-lg w-full h-56 object-cover">
+        <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 mb-20">
+            <div class="bg-white/5 p-2 rounded-xl border border-white/10">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600" class="rounded-lg w-full h-52 object-cover">
             </div>
-            <div class="glass p-2 rounded-xl">
-                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=500" class="rounded-lg w-full h-56 object-cover">
+            <div class="bg-white/5 p-2 rounded-xl border border-white/10">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600" class="rounded-lg w-full h-52 object-cover">
             </div>
-            <div class="glass p-2 rounded-xl">
-                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=500" class="rounded-lg w-full h-56 object-cover">
+            <div class="bg-white/5 p-2 rounded-xl border border-white/10">
+                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?w=600" class="rounded-lg w-full h-52 object-cover">
             </div>
         </div>
 
-        <section class="max-w-xl mx-auto">
-            <div class="glass p-6 md:p-10 rounded-[2rem]">
-                <h2 class="text-xl font-black text-center mb-6 text-yellow-500 tracking-widest uppercase">Contact Us</h2>
-                <form action="https://formspree.io/f/xqeddpgl" method="POST" enctype="multipart/form-data" class="space-y-4">
-                    <input type="text" name="Name" placeholder="Your Name" class="w-full bg-white/5 border border-white/10 p-3 rounded-xl outline-none focus:border-yellow-500 text-sm" required>
-                    <input type="text" name="Phone" placeholder="WhatsApp Number" class="w-full bg-white/5 border border-white/10 p-3 rounded-xl outline-none focus:border-yellow-500 text-sm" required>
-                    <div class="border border-dashed border-white/20 p-4 rounded-xl text-center relative">
-                        <input type="file" name="Design" class="absolute inset-0 opacity-0 cursor-pointer">
-                        <span class="text-white/30 text-xs">Upload Reference (Image/PDF)</span>
-                    </div>
-                    <textarea name="Message" placeholder="Project Details..." rows="3" class="w-full bg-white/5 border border-white/10 p-3 rounded-xl outline-none focus:border-yellow-500 text-sm" required></textarea>
-                    <button type="submit" class="w-full bg-yellow-500 text-black font-black py-4 rounded-xl hover:bg-yellow-400 transition-all uppercase tracking-widest text-xs">Submit Inquiry</button>
-                </form>
-            </div>
+        <section class="max-w-lg mx-auto bg-white/5 p-8 rounded-[2rem] border border-white/10 backdrop-blur-md">
+            <h2 class="text-xl font-black text-center mb-8 text-yellow-500 tracking-widest">GET A QUOTE</h2>
+            <form action="https://formspree.io/f/xqeddpgl" method="POST" enctype="multipart/form-data" class="space-y-4">
+                <input type="text" name="Name" placeholder="Name" class="w-full bg-black/40 border border-white/10 p-3 rounded-xl outline-none focus:border-yellow-500 text-sm" required>
+                <input type="text" name="WhatsApp" placeholder="WhatsApp Number" class="w-full bg-black/40 border border-white/10 p-3 rounded-xl outline-none focus:border-yellow-500 text-sm" required>
+                <div class="border border-dashed border-white/20 p-4 rounded-xl text-center relative bg-black/20">
+                    <input type="file" name="attachment" class="absolute inset-0 opacity-0 cursor-pointer">
+                    <span class="text-white/30 text-xs uppercase font-bold">Upload Design</span>
+                </div>
+                <textarea name="Message" placeholder="Message" rows="3" class="w-full bg-black/40 border border-white/10 p-3 rounded-xl outline-none focus:border-yellow-500 text-sm" required></textarea>
+                <button type="submit" class="w-full bg-yellow-500 text-black font-black py-4 rounded-xl hover:bg-yellow-400 transition-all uppercase tracking-widest text-xs">Launch Project</button>
+            </form>
         </section>
     </main>
 
-    <footer class="py-6 text-center opacity-30 text-[7px] tracking-[3px]">
+    <footer class="py-6 text-center opacity-30 text-[8px] tracking-[4px]">
         SES • SAADAT EVENT SOLUTION • 2026
     </footer>
 
+    <script>
+        // Force video play on mobile
+        window.onload = function() {
+            var video = document.getElementById('mainVideo');
+            video.play().catch(function(error) {
+                console.log("Autoplay blocked, trying again...");
+                video.muted = true;
+                video.play();
+            });
+        };
+    </script>
 </body>
 </html>
