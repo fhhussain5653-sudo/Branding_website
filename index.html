@@ -3,75 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SAADAT EVENT SOLUTION</title>
+    <title>SAADAT EVENT SOLUTION | Premium Excellence</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Inter:wght@400;900&family=Playfair+Display:ital,wght@1,900&display=swap');
         body { font-family: 'Inter', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
         .logo-font { font-family: 'Syncopate', sans-serif; }
+        .brand-accent { font-family: 'Playfair Display', serif; font-style: italic; }
+        
+        /* Video Background Styling */
+        #bg-video { position: absolute; top: 50%; left: 50%; min-width: 100%; min-height: 100%; width: auto; height: auto; z-index: -1; transform: translate(-50%, -50%); filter: brightness(0.3) contrast(1.1); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255,255,255,0.1); }
+        
+        /* Gallery Zoom */
+        .gallery-card { overflow: hidden; border-radius: 1rem; position: relative; }
+        .gallery-card img { transition: 0.6s ease; width: 100%; height: 350px; object-fit: cover; }
+        .gallery-card:hover img { transform: scale(1.1); filter: brightness(0.6); }
+
         @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
-        .animate-marquee { display: flex; width: max-content; animation: marquee 25s linear infinite; }
-        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); }
+        .animate-marquee { display: flex; width: max-content; animation: marquee 20s linear infinite; }
     </style>
 </head>
 <body>
 
-    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
-        <a href="https://www.facebook.com/aapka_page" target="_blank" class="bg-[#1877F2] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
-            <i class="fab fa-facebook-f text-2xl"></i>
-        </a>
-        <a href="https://www.instagram.com/aapka_username" target="_blank" class="bg-[#E4405F] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
-            <i class="fab fa-instagram text-2xl"></i>
-        </a>
-        <a href="https://www.tiktok.com/@aapka_username" target="_blank" class="bg-black text-white p-4 rounded-full shadow-lg border border-white/20 hover:scale-110 transition-transform flex items-center justify-center">
-            <i class="fab fa-tiktok text-2xl"></i>
-        </a>
-        <a href="https://wa.me/923152445653" target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
-            <i class="fab fa-whatsapp text-3xl"></i>
-        </a>
-    </div>
-
-    <nav class="fixed w-full z-50 border-b border-white/10 glass px-6 py-4 flex justify-between items-center">
-        <div class="flex items-center gap-3">
-            <div class="relative h-12 w-12 bg-yellow-500 rounded-full flex items-center justify-center font-black text-black text-xl shadow-[0_0_20px_rgba(234,179,8,0.3)]">S</div>
-            <h1 class="logo-font text-lg text-yellow-500 uppercase leading-none">
-                SAADAT <br><span class="text-white text-[10px] tracking-[0.3em]">EVENT SOLUTION</span>
-            </h1>
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center gap-4">
+            <div class="bg-yellow-500 h-10 w-10 rounded-lg flex items-center justify-center font-black text-black shadow-lg">S</div>
+            <div>
+                <h1 class="logo-font text-xl text-yellow-500 leading-none tracking-tighter">SAADAT</h1>
+                <span class="brand-accent text-[10px] text-white/70 uppercase tracking-widest">Event Solutions</span>
+            </div>
+        </div>
+        <div class="hidden md:flex items-center gap-6">
+            <a href="https://www.facebook.com/aapka_page" class="text-white/70 hover:text-yellow-500 transition-all"><i class="fab fa-facebook-f text-lg"></i></a>
+            <a href="https://www.instagram.com/aapka_username" class="text-white/70 hover:text-yellow-500 transition-all"><i class="fab fa-instagram text-lg"></i></a>
+            <a href="https://wa.me/923152445653" class="bg-yellow-500 text-black px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest hover:bg-yellow-400 transition-all">Connect</a>
         </div>
     </nav>
 
-    <header class="relative h-screen flex items-center justify-center overflow-hidden text-center px-6">
-        <img src="https://images.unsplash.com/photo-1582192730841-2a682d7375f9?auto=format&fit=crop&q=80&w=1600" class="absolute inset-0 w-full h-full object-cover opacity-30 scale-110">
-        <div class="relative z-10" data-aos="zoom-out" data-aos-duration="1500">
-            <h2 class="text-5xl md:text-8xl font-black uppercase tracking-tighter">WE BUILD <span class="text-yellow-500">EXCELLENCE</span></h2>
-            <p class="mt-6 text-gray-400 max-w-xl mx-auto">Premium exhibition stall design and fabrication.</p>
+    <header class="relative h-screen flex items-center justify-center overflow-hidden">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="https://assets.mixkit.co/videos/preview/mixkit-large-exhibition-hall-with-many-people-32742-large.mp4" type="video/mp4">
+        </video>
+        <div class="relative z-10 text-center" data-aos="zoom-in" data-aos-duration="1200">
+            <h2 class="text-6xl md:text-9xl font-black italic uppercase tracking-tighter">
+                IMPACTFUL <span class="text-yellow-500">DESIGNS</span>
+            </h2>
+            <p class="mt-4 text-gray-400 brand-accent text-xl">Creating Premium Brand Experiences</p>
         </div>
     </header>
 
     <div class="bg-yellow-500 py-4 overflow-hidden">
         <div class="animate-marquee">
-            <span class="text-black font-black uppercase mx-4 text-sm">EVENT MANAGEMENT • EXHIBITION STALLS • FABRICATION • 3D DESIGN • </span>
-            <span class="text-black font-black uppercase mx-4 text-sm">EVENT MANAGEMENT • EXHIBITION STALLS • FABRICATION • 3D DESIGN • </span>
+            <span class="text-black font-black uppercase mx-8">Exhibition Stalls • Event Management • Fabrication • 3D Design • Branding • </span>
+            <span class="text-black font-black uppercase mx-8">Exhibition Stalls • Event Management • Fabrication • 3D Design • Branding • </span>
         </div>
     </div>
 
-    <section class="py-24 px-6 max-w-4xl mx-auto" data-aos="fade-up">
-        <div class="bg-zinc-900/50 p-10 rounded-2xl border border-white/10 glass">
-            <h3 class="text-3xl font-black text-center mb-10 uppercase tracking-tighter text-yellow-500">Get A Quote</h3>
-            <form action="https://formspree.io/f/xqeddpgl" method="POST" class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <input type="text" name="Name" placeholder="Name" class="bg-black/50 border border-white/10 p-3 rounded text-white focus:outline-none focus:border-yellow-500" required>
-                <input type="text" name="Phone Number" placeholder="Phone Number" class="bg-black/50 border border-white/10 p-3 rounded text-white focus:outline-none focus:border-yellow-500" required>
-                <textarea name="Message" placeholder="Message" rows="4" class="md:col-span-2 bg-black/50 border border-white/10 p-3 rounded text-white focus:outline-none focus:border-yellow-500" required></textarea>
-                <button type="submit" class="md:col-span-2 bg-yellow-500 text-black font-black py-4 rounded-xl hover:bg-yellow-400 transition-all uppercase tracking-widest">Send Message</button>
+    <section class="py-24 px-6 max-w-7xl mx-auto">
+        <h3 class="logo-font text-3xl text-yellow-500 mb-12 text-center uppercase tracking-widest">Our Masterpieces</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="gallery-card" data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/40 font-black">STALL DESIGN</div>
+            </div>
+            <div class="gallery-card" data-aos="fade-up" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/40 font-black">FABRICATION</div>
+            </div>
+            <div class="gallery-card" data-aos="fade-up" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80">
+                <div class="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity bg-black/40 font-black">BRANDING</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 bg-zinc-950">
+        <div class="max-w-4xl mx-auto bg-zinc-900 p-10 rounded-3xl border border-white/5">
+            <h3 class="text-3xl font-black text-center mb-10 text-yellow-500 uppercase tracking-tighter">Share Your Vision</h3>
+            <form action="https://formspree.io/f/xqeddpgl" method="POST" enctype="multipart/form-data" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <input type="text" name="Name" placeholder="Your Name" class="bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-yellow-500" required>
+                <input type="text" name="Phone" placeholder="Phone Number" class="bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-yellow-500" required>
+                
+                <div class="md:col-span-2 border-2 border-dashed border-white/10 p-8 rounded-xl text-center hover:border-yellow-500 transition-all relative">
+                    <input type="file" name="Reference_Image" class="absolute inset-0 opacity-0 cursor-pointer">
+                    <i class="fas fa-cloud-upload-alt text-2xl text-yellow-500 mb-2"></i>
+                    <p class="text-sm text-gray-400">Upload Reference Image / Design</p>
+                </div>
+
+                <textarea name="Message" placeholder="How can we help you?" rows="4" class="md:col-span-2 bg-black/50 border border-white/10 p-4 rounded-xl outline-none focus:border-yellow-500" required></textarea>
+                <button type="submit" class="md:col-span-2 bg-yellow-500 text-black font-black py-4 rounded-xl hover:bg-yellow-400 transition-all uppercase tracking-widest">Launch Project</button>
             </form>
         </div>
     </section>
 
-    <footer class="py-12 border-t border-white/10 text-center opacity-50">
-        <p class="logo-font text-yellow-500 text-sm">SAADAT EVENT SOLUTION</p>
-    </footer>
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4 z-50">
+        <a href="https://www.facebook.com/aapka_page" target="_blank" class="bg-[#1877F2] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
+            <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        <a href="https://www.instagram.com/aapka_username" target="_blank" class="bg-[#E4405F] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
+            <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a href="https://wa.me/923152445653" target="_blank" class="bg-[#25D366] text-white p-4 rounded-full shadow-lg hover:scale-110 transition-transform flex items-center justify-center">
+            <i class="fab fa-whatsapp text-3xl"></i>
+        </a>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>AOS.init({ once: true });</script>
